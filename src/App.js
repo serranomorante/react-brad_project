@@ -41,6 +41,7 @@ const App = () => {
 
   // Get a single Github User
   const getUser = async username => {
+    console.log('Llamando getuser');
     setLoading(true);
     const res = await axios.get(
       `https://api.github.com/users/${username}?&client_id=${
@@ -93,7 +94,7 @@ const App = () => {
                       showClear={users.length > 0 ? true : false}
                       setAlert={showAlert}
                     />
-                    <Users loading={loading} users={users} />
+                    <Users />
                   </Fragment>
                 )}
               />
